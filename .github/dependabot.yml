@@ -1,0 +1,8 @@
+# Watches the GitHub Actions used by deploy.yml and opens a PR when one of
+# them gets a security update, so a pinned version can't quietly go stale.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
