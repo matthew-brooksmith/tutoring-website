@@ -83,7 +83,7 @@ jobs:
           fi
           echo "No GPS coordinates, serial numbers or owner names in any image."
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
 
       - uses: actions/upload-pages-artifact@v3
         with:
