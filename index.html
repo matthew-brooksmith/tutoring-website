@@ -1,16 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-GB">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Physics &amp; Maths Tutoring | GCSE, A-Level &amp; University</title>
-<meta name="description" content="One-to-one Physics and Maths tutoring over Zoom for GCSE, A-Level and university students. Imperial College London PhD researcher, graduated top of year at Master's level. First session free.">
-<meta name="theme-color" content="#0000CD">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Physics &amp; Maths Tutoring | GCSE, A-Level &amp; University</title>
+    <meta
+      name="description"
+      content="One-to-one Physics and Maths tutoring over Zoom for GCSE, A-Level and university students. Imperial College London PhD researcher, graduated top of year at Master's level. First session free."
+    />
+    <meta name="theme-color" content="#0000CD" />
 
-<meta http-equiv="Content-Security-Policy" content="
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
   default-src 'none';
-  script-src 'self' 'unsafe-inline';
-  style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+  script-src 'self';
+  style-src 'self' https://fonts.googleapis.com;
   font-src https://fonts.gstatic.com;
   img-src 'self' data:;
   connect-src https://api.web3forms.com;
@@ -19,1093 +24,380 @@
   object-src 'none';
   frame-src 'none';
   manifest-src 'none';
-  upgrade-insecure-requests;">
+  upgrade-insecure-requests;"
+    />
 
-<meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
 
-<meta property="og:title" content="Physics &amp; Maths Tutoring">
-<meta property="og:description" content="One-to-one Physics and Maths tutoring over Zoom. GCSE, A-Level and university. First session free.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="assets/matt.jpg">
+    <meta property="og:title" content="Physics &amp; Maths Tutoring" />
+    <meta
+      property="og:description"
+      content="One-to-one Physics and Maths tutoring over Zoom. GCSE, A-Level and university. First session free."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/matt.jpg" />
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230000CD'/><text y='72' x='50' text-anchor='middle' font-size='62' font-family='Helvetica,Arial' font-weight='bold' fill='white'>M</text></svg>">
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230000CD'/><text y='72' x='50' text-anchor='middle' font-size='62' font-family='Helvetica,Arial' font-weight='bold' fill='white'>M</text></svg>"
+    />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-<style>
-:root{
-  --blue-deep:  #0000CD;
-  --blue-mid:   #5A77EF;
-  --blue-page:  #6F8BC8;
-  --blue-pale:  #BDCAE6;
-  --crimson:    #AC1B45;
-  --green:      #00BF63;
-  --purple:     #8C52FF;
-  --orange:     #CD7B00;
-  --ink:        #12183A;
-  --white:      #FFFFFF;
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#book">Skip to booking form</a>
 
-  --shadow-hard: 0 6px 0 rgba(0,0,0,.22);
-  --radius: 18px;
-  --maxw: 1080px;
-}
-
-*,*::before,*::after{ box-sizing:border-box; }
-
-html{ scroll-behavior:smooth; }
-
-body{
-  margin:0;
-  overflow-x:clip;
-  background:var(--blue-page);
-  color:var(--ink);
-  font-family:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
-  font-size:17px;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-
-.wrap{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
-
-h1,h2,h3,.display{
-  font-family:"Anton",Impact,"Arial Narrow Bold",sans-serif;
-  font-weight:400;
-  letter-spacing:.02em;
-  text-transform:uppercase;
-  margin:0;
-  line-height:1.05;
-}
-
-a{ color:inherit; }
-
-.banner{
-  background:var(--blue-deep);
-  color:var(--white);
-  text-align:center;
-  padding:22px 20px 18px;
-  border-bottom:5px solid rgba(0,0,0,.25);
-}
-.banner h1{
-  font-size:clamp(1.75rem,7.2vw,4.4rem);
-  text-shadow:0 4px 0 rgba(0,0,0,.28);
-}
-
-.levels{
-  background:var(--blue-mid);
-  color:var(--white);
-  display:flex;
-  justify-content:center;
-  gap:clamp(14px,6vw,80px);
-  flex-wrap:wrap;
-  padding:13px 20px;
-  font-family:"Anton",Impact,sans-serif;
-  font-size:clamp(1.25rem,5vw,3rem);
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  text-shadow:0 3px 0 rgba(0,0,0,.18);
-}
-
-.hero{
-  display:grid;
-  grid-template-columns:minmax(0,300px) minmax(0,1fr);
-  gap:38px;
-  align-items:center;
-  padding:52px 0 44px;
-}
-@media (max-width:900px){
-  .hero{ grid-template-columns:1fr; gap:26px; justify-items:center; text-align:center; padding:36px 0 32px; }
-}
-@media (orientation:landscape) and (max-height:500px) and (min-width:700px){
-  .hero{ grid-template-columns:190px 1fr; gap:52px; padding:20px 0; }
-}
-
-.photo-frame{
-  background:var(--white);
-  padding:13px 13px 13px;
-  border:3px solid var(--ink);
-  border-radius:6px;
-  box-shadow:0 14px 30px rgba(0,0,0,.32);
-  transform:rotate(-2.2deg);
-  transition:transform .35s ease;
-  width:100%;
-  max-width:300px;
-}
-.photo-frame:hover{ transform:rotate(0deg) scale(1.015); }
-.photo-frame img{
-  display:block;
-  width:100%;
-  height:auto;
-  border-radius:3px;
-}
-.photo-frame figcaption{
-  font-family:"Anton",Impact,sans-serif;
-  text-transform:uppercase;
-  text-align:center;
-  font-size:.95rem;
-  letter-spacing:.08em;
-  color:var(--ink);
-  padding-top:11px;
-}
-@media (orientation:landscape) and (max-height:500px) and (min-width:700px){
-  .photo-frame{ max-width:190px; transform:rotate(-2.2deg) translateX(-14px); }
-  .photo-frame:hover{ transform:translateX(-14px) scale(1.015); }
-}
-
-.hero h2{
-  font-size:clamp(2.2rem,6vw,3.4rem);
-  color:var(--white);
-  text-shadow:0 4px 0 rgba(0,0,0,.25);
-}
-.hero .role{
-  font-size:clamp(1rem,2.6vw,1.2rem);
-  font-weight:600;
-  color:var(--white);
-  margin:10px 0 20px;
-  max-width:44ch;
-}
-@media (max-width:900px){ .hero .role{ margin-left:auto; margin-right:auto; } }
-
-.badges{ display:flex; flex-wrap:wrap; gap:13px; }
-@media (max-width:900px){ .badges{ justify-content:center; } }
-.badge{
-  font-family:"Anton",Impact,sans-serif;
-  text-transform:uppercase;
-  color:var(--white);
-  font-size:clamp(1.05rem,2.9vw,1.45rem);
-  letter-spacing:.03em;
-  padding:13px 22px;
-  border-radius:12px;
-  box-shadow:var(--shadow-hard);
-  text-shadow:0 2px 0 rgba(0,0,0,.18);
-}
-.badge.purple{ background:var(--purple); }
-.badge.green { background:var(--green);  }
-.badge.orange{ background:var(--orange); }
-
-.cta-row{ display:flex; flex-wrap:wrap; gap:22px; margin-top:28px; }
-.cta-row .btn{
-  font-size:clamp(1.15rem,3vw,1.6rem);
-  padding:18px 34px;
-  border-radius:13px;
-}
-@media (max-width:900px){ .cta-row{ justify-content:center; } }
-@media (max-width:400px){
-  .cta-row{ flex-direction:column; }
-  .cta-row .btn{ width:100%; text-align:center; }
-}
-
-.btn{
-  display:inline-block;
-  font-family:"Anton",Impact,sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.04em;
-  font-size:1.05rem;
-  padding:14px 26px;
-  border-radius:11px;
-  border:0;
-  cursor:pointer;
-  text-decoration:none;
-  color:var(--white);
-  background:var(--blue-deep);
-  box-shadow:var(--shadow-hard);
-  transition:transform .12s ease, box-shadow .12s ease, filter .12s ease;
-}
-.btn:hover{ filter:brightness(1.12); }
-.btn:active{ transform:translateY(5px); box-shadow:0 1px 0 rgba(0,0,0,.22); }
-
-@media (hover:hover){
-  .cta-row .btn{
-    transition:transform .2s ease-out, box-shadow .2s ease-out, filter .15s ease;
-  }
-  .cta-row .btn:hover{
-    transform:scale(1.06);
-    transition:transform .22s cubic-bezier(.2,.85,.3,1.4), box-shadow .18s ease, filter .12s ease;
-    box-shadow:0 10px 0 rgba(0,0,0,.22), 0 16px 26px rgba(0,0,0,.25);
-  }
-  .cta-row .btn:active{
-    transform:scale(1.02) translateY(5px);
-    box-shadow:0 3px 0 rgba(0,0,0,.22);
-  }
-}
-.btn.crimson{ background:var(--crimson); }
-.btn.green{ background:var(--green); }
-.btn.ghost{
-  background:transparent;
-  border:3px solid var(--white);
-  box-shadow:none;
-  padding:11px 23px;
-}
-.btn.ghost:active{ transform:translateY(2px); }
-
-.contact-bar{
-  background:var(--crimson);
-  border-top:6px solid #000;
-  border-bottom:6px solid #000;
-  padding:18px 20px;
-  text-align:center;
-}
-.contact-bar a{
-  display:inline-flex;
-  align-items:center;
-  gap:14px;
-  color:var(--white);
-  text-decoration:none;
-  font-family:"Anton",Impact,sans-serif;
-  text-transform:uppercase;
-  font-size:clamp(1.15rem,4.4vw,2.35rem);
-  letter-spacing:.02em;
-  text-shadow:0 3px 0 rgba(0,0,0,.3);
-  transform-origin:center;
-}
-@media (hover:hover){
-  .contact-bar a{ transition:transform .2s cubic-bezier(.2,.85,.3,1.25), filter .15s ease; }
-  .contact-bar a:hover{ transform:scale(1.12); filter:brightness(1.08); }
-  .contact-bar a:active{ transform:scale(1.05); }
-}
-.contact-bar svg{ width:1.15em; height:1.15em; flex:none; }
-.contact-bar small{
-  display:block;
-  font-family:"Barlow",sans-serif;
-  text-transform:none;
-  color:#FFD9E3;
-  font-size:.95rem;
-  letter-spacing:0;
-  margin-top:6px;
-  text-shadow:none;
-  font-weight:500;
-}
-
-section{ padding:52px 0; }
-
-.section-head{
-  text-align:center;
-  color:var(--white);
-  font-size:clamp(1.7rem,5vw,2.7rem);
-  text-shadow:0 4px 0 rgba(0,0,0,.28);
-  margin-bottom:8px;
-}
-.section-head::after{
-  content:"";
-  display:block;
-  width:clamp(200px,52%,420px);
-  height:6px;
-  margin:18px auto 0;
-  background:var(--white);
-  border-radius:3px;
-  box-shadow:0 3px 0 rgba(0,0,0,.22);
-}
-.section-sub{
-  text-align:center;
-  color:#EAF0FF;
-  max-width:60ch;
-  margin:0 auto 32px;
-  font-weight:500;
-}
-
-.card{
-  background:var(--blue-deep);
-  color:var(--white);
-  border-radius:var(--radius);
-  padding:28px 30px;
-  box-shadow:0 10px 24px rgba(0,0,0,.22);
-}
-.card h3{
-  font-size:1.5rem;
-  margin-bottom:14px;
-  color:var(--white);
-}
-.card ul{ margin:0; padding-left:1.15em; }
-.card li{ margin-bottom:11px; }
-.card li:last-child{ margin-bottom:0; }
-.card p{ margin:0 0 14px; }
-.card p:last-child{ margin-bottom:0; }
-
-.grid-2{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:26px; }
-.grid-3{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:22px; }
-
-.quote{
-  margin:0 0 18px;
-  padding-left:16px;
-  border-left:5px solid var(--green);
-  font-size:1.06rem;
-  font-style:italic;
-}
-.quote:last-child{ margin-bottom:0; }
-
-.featured-review{
-  margin:26px 0 0;
-  background:var(--white);
-  color:var(--ink);
-  border-radius:var(--radius);
-  border-left:10px solid var(--green);
-  padding:clamp(26px,4vw,38px) clamp(24px,4vw,44px);
-  box-shadow:0 10px 24px rgba(0,0,0,.22);
-  position:relative;
-}
-.featured-review::before,
-.featured-review::after{
-  font-family:Georgia,serif;
-  position:absolute;
-  font-size:5.5rem;
-  line-height:1;
-  color:var(--green);
-  opacity:.28;
-  pointer-events:none;
-  z-index:0;
-}
-.featured-review::before{ content:"\201C"; top:-8px;     left:14px;  }
-.featured-review::after { content:"\201D"; bottom:-20px; right:18px; }
-
-.featured-review blockquote{
-  margin:0;
-  font-size:clamp(1.02rem,2.2vw,1.2rem);
-  line-height:1.7;
-  font-style:italic;
-  position:relative;
-  z-index:1;
-}
-.featured-review strong{ font-style:normal; color:var(--blue-deep); }
-.featured-review figcaption{
-  position:relative;
-  z-index:1;
-  margin-top:16px;
-  font-family:"Anton",Impact,sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  font-size:.88rem;
-  color:var(--crimson);
-}
-.featured-review figcaption::before{ content:"— "; }
-
-.topic-card{ background:rgba(255,255,255,.96); color:var(--ink); }
-.topic-card .tier{
-  display:block;
-  background:var(--blue-deep);
-  color:var(--white);
-  font-family:"Anton",Impact,sans-serif;
-  text-transform:uppercase;
-  font-size:clamp(1.6rem,5.2vw,2.3rem);
-  line-height:1.1;
-  letter-spacing:.03em;
-  text-align:center;
-  padding:12px 14px;
-  border-radius:11px;
-  margin:0 0 14px;
-  box-shadow:var(--shadow-hard);
-  text-shadow:0 3px 0 rgba(0,0,0,.22);
-}
-.topic-card h3{
-  color:#48507A;
-  font-size:clamp(1.2rem,2.6vw,1.4rem);
-  letter-spacing:.08em;
-  text-align:center;
-  margin-bottom:16px;
-}
-.topic-card ul{ padding-left:1.1em; }
-.topic-card li{ margin-bottom:8px; }
-
-.booking-card{
-  background:var(--white);
-  color:var(--ink);
-  border-radius:var(--radius);
-  padding:clamp(22px,4vw,38px);
-  box-shadow:0 16px 40px rgba(0,0,0,.28);
-  border:3px solid var(--ink);
-}
-
-fieldset{ border:0; padding:0; margin:0 0 26px; }
-fieldset:last-of-type{ margin-bottom:20px; }
-
-legend, .field-label{
-  font-family:"Anton",Impact,sans-serif;
-  text-transform:uppercase;
-  font-size:1.05rem;
-  letter-spacing:.04em;
-  color:var(--blue-deep);
-  padding:0;
-  margin-bottom:4px;
-  display:block;
-}
-.hint{ font-size:.92rem; color:#5A6180; margin:0 0 12px; }
-
-input[type="text"], input[type="tel"], input[type="email"], select, textarea{
-  width:100%;
-  font-family:"Barlow",sans-serif;
-  font-size:1rem;
-  padding:12px 14px;
-  border:2px solid #C3CBE4;
-  border-radius:10px;
-  background:#F7F9FF;
-  color:var(--ink);
-  transition:border-color .15s ease, box-shadow .15s ease;
-}
-input:focus, select:focus, textarea:focus{
-  outline:none;
-  border-color:var(--blue-deep);
-  box-shadow:0 0 0 4px rgba(0,0,205,.14);
-}
-textarea{ resize:vertical; min-height:104px; }
-
-.field-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
-.field{ margin-bottom:16px; }
-
-.choice-row{ display:flex; flex-wrap:wrap; gap:12px; }
-.choice input{ position:absolute; opacity:0; width:0; height:0; }
-.choice span{
-  display:inline-block;
-  font-family:"Anton",Impact,sans-serif;
-  text-transform:uppercase;
-  letter-spacing:.04em;
-  padding:12px 22px;
-  border-radius:11px;
-  border:3px solid var(--blue-deep);
-  color:var(--blue-deep);
-  background:var(--white);
-  cursor:pointer;
-  user-select:none;
-  transition:all .15s ease;
-}
-.choice input:checked + span{
-  background:var(--blue-deep);
-  color:var(--white);
-  box-shadow:var(--shadow-hard);
-}
-.choice input:focus-visible + span{ box-shadow:0 0 0 4px rgba(0,0,205,.3); }
-
-.slot-day{ margin-bottom:16px; }
-.slot-day h4{
-  font-family:"Anton",Impact,sans-serif;
-  text-transform:uppercase;
-  font-size:.95rem;
-  letter-spacing:.05em;
-  color:var(--ink);
-  margin:0 0 8px;
-  padding-bottom:5px;
-  border-bottom:2px solid #E2E7F5;
-}
-.slot-list{ display:flex; flex-wrap:wrap; gap:9px; }
-.slot input{ position:absolute; opacity:0; width:0; height:0; }
-.slot span{
-  display:inline-block;
-  font-weight:600;
-  font-size:.95rem;
-  padding:9px 15px;
-  border-radius:9px;
-  border:2px solid #C3CBE4;
-  background:#F7F9FF;
-  cursor:pointer;
-  user-select:none;
-  transition:all .13s ease;
-}
-.slot span:hover{ border-color:var(--green); }
-.slot input:checked + span{
-  background:var(--green);
-  border-color:var(--green);
-  color:var(--white);
-  font-weight:700;
-}
-.slot input:focus-visible + span{ box-shadow:0 0 0 4px rgba(0,191,99,.35); }
-.slot.flexible span{ border-style:dashed; }
-
-.tz-note{ font-size:.9rem; color:#5A6180; margin-top:12px; }
-
-.privacy{ font-size:.88rem; color:#5A6180; margin-top:16px; }
-
-.status{ margin-top:18px; padding:15px 18px; border-radius:11px; font-weight:600; display:none; }
-.status.show{ display:block; }
-.status.ok{   background:#E4FBEF; color:#0A6B3C; border:2px solid var(--green); }
-.status.err{  background:#FDE8EE; color:#8A102F; border:2px solid var(--crimson); }
-.status.info{ background:#FFF5DF; color:#7A5200; border:2px solid var(--orange); }
-
-.setup-warning{
-  background:#FFF5DF;
-  border:2px dashed var(--orange);
-  color:#7A5200;
-  padding:14px 18px;
-  border-radius:11px;
-  margin-bottom:22px;
-  font-size:.94rem;
-  display:none;
-}
-.setup-warning.show{ display:block; }
-.setup-warning code{
-  background:rgba(0,0,0,.07);
-  padding:2px 6px;
-  border-radius:4px;
-  font-size:.9em;
-}
-
-.hp{ position:absolute; left:-9999px; opacity:0; height:0; overflow:hidden; }
-
-button[disabled]{ opacity:.6; cursor:progress; }
-
-footer{
-  background:var(--blue-pale);
-  color:var(--ink);
-  padding:26px 20px;
-  text-align:center;
-}
-.affil{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:clamp(26px,7vw,64px);
-  flex-wrap:wrap;
-}
-.affil img{ display:block; width:auto; }
-.logo-cern{ height:clamp(46px,9vw,62px); }
-.logo-imperial{ height:clamp(19px,3.8vw,26px); }
-footer small{ display:block; margin-top:14px; color:#3A4468; letter-spacing:0; font-family:"Barlow",sans-serif; text-transform:none; }
-
-.skip{
-  position:absolute; left:-9999px;
-  background:var(--white); color:var(--blue-deep);
-  padding:12px 18px; z-index:100; border-radius:0 0 10px 0; font-weight:700;
-}
-.skip:focus{ left:0; top:0; }
-
-@media (prefers-reduced-motion:reduce){
-  *{ transition:none !important; animation:none !important; }
-  html{ scroll-behavior:auto; }
-  .photo-frame{ transform:none; }
-  .cta-row .btn:hover{ transform:none; }
-}
-</style>
-</head>
-<body>
-
-<a class="skip" href="#book">Skip to booking form</a>
-
-<header>
-  <div class="banner">
-    <h1>Physics &amp; Maths Tutoring</h1>
-  </div>
-  <nav class="levels" aria-label="Levels taught">
-    <span>University</span>
-    <span>A-Level</span>
-    <span>GCSE</span>
-  </nav>
-</header>
-
-<div class="wrap">
-  <div class="hero">
-    <figure class="photo-frame">
-      <img src="assets/matt.jpg" alt="Matt, physics and maths tutor" width="433" height="548">
-      <figcaption>Me!</figcaption>
-    </figure>
-
-    <div>
-      <h2>Hi, I'm Matt</h2>
-      <p class="role">
-        Currently, I am physics PhD student at Imperial College London. I have over two years of experience teaching physics and maths. 
-        I focus on building a student's conceptual understanding and utilising basic rules to solve every exam problem.
-
-      <div class="badges">
-        <span class="badge purple">1st session free</span>
-        <span class="badge green">Zoom sessions</span>
-        <span class="badge orange">Custom learning materials</span>
+    <header>
+      <div class="banner">
+        <h1>Physics &amp; Maths Tutoring</h1>
       </div>
+      <nav class="levels" aria-label="Levels taught">
+        <span>University</span>
+        <span>A-Level</span>
+        <span>GCSE</span>
+      </nav>
+    </header>
 
-      <div class="cta-row">
-        <a class="btn" href="#book">Book a session</a>
-        <a class="btn" href="#about">How I teach</a>
-      </div>
-    </div>
-  </div>
-</div>
+    <div class="wrap">
+      <div class="hero">
+        <figure class="photo-frame">
+          <img src="assets/matt.jpg" alt="Matt, physics and maths tutor" width="433" height="548" />
+          <figcaption>Me!</figcaption>
+        </figure>
 
-<div class="contact-bar">
-  <a href="https://wa.me/447923670931" target="_blank" rel="noopener noreferrer">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24z"/>
-    </svg>
-    <span>+447923670931</span>
-  </a>
-  <small>Please send a message directly on WhatsApp or via the booking form below.</small>
-</div>
-
-<section id="credentials">
-  <div class="wrap">
-    <div class="grid-2">
-
-      <div class="card">
-        <h3>Qualifications</h3>
-        <ul>
-          <li>Graduated with the <strong>highest percentage grade at the Master's and Undergraduate level</strong> from a Russell Group university.</li>
-          <li>Currently undertaking <strong>PhD studies in physics at Imperial College London</strong>.</li>
-          <li><strong>Two years</strong> of one-to-one teaching experience.</li>
-          <li>Research experience with <strong>CERN</strong>, the <strong>University of Oxford</strong> and <strong>Imperial College London</strong>.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>What do students say?</h3>
-        <blockquote class="quote">"Made my revision feel so much more productive."</blockquote>
-        <blockquote class="quote">"Drastically improved my confidence."</blockquote>
-        <blockquote class="quote">"Matt helped me turn equations into understanding."</blockquote>
-        <blockquote class="quote">"He has a way of explaining concepts that is clear and makes sense."</blockquote>
-        <blockquote class="quote">"He was very supportive — there were no stupid questions."</blockquote>
-      </div>
-
-    </div>
-
-    <figure class="featured-review">
-      <blockquote>
-        I really struggled with A-Level Physics, especially as I hadn't taken A-Level Maths.
-        This made many concepts difficult to grasp initially. After trying other tutors, I was
-        so lucky to find Matt. He has a way of explaining concepts in a way that is clear and
-        makes sense, using words and examples to facilitate my understanding. His patience and
-        tutoring style made me feel at ease and I felt I could ask anything.
-        <strong>I cannot recommend him highly enough!</strong>
-      </blockquote>
-      <figcaption>A-Level Physics student</figcaption>
-    </figure>
-
-  </div>
-</section>
-
-<section id="about">
-  <div class="wrap">
-    <h2 class="section-head">How I teach</h2>
-    <p class="section-sub">
-      Most of my sessions operate via Zoom, although in some cases I can meet in person. I focus on building a student's conceptual understanding and utilising basic rules to solve every exam problem.
-    </p>
-
-    <div class="grid-1">
-      <div class="card">
-        <p>
-          Typically, I ask which topic the student wants to improve in. Firstly, we make sure the conceptual background is clear. Secondly, we work through a few problems together. 
-          I can provide problem sheets and past papers, or the student can bring their own from lessons. If the problems are still difficult, we take link it back to basics:
-          I find making animations and diagrams is a great way to learn.
-        </p>
-        <p>
-
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="subjects">
-  <div class="wrap">
-    <h2 class="section-head">What I cover</h2>
-    <p class="section-sub">All major exam boards — AQA, Edexcel, OCR and WJEC. I can help with most stages of physics and maths; from GCSEs to the University level.</p>
-
-    <div class="grid-3">
-
-      <div class="card topic-card">
-        <span class="tier">GCSE</span>
-        <h3>Topics:</h3>
-        <ul>
-          <li>Forces, Motion and Energy</li>
-          <li>Electricity and Magnetism</li>
-          <li>Waves, Radioactivity and Space</li>
-          <li>Algebra</li>
-          <li>Geometry</li>
-          <li>Probability</li>
-          <li>Exam Technique and Past Papers</li>
-        </ul>
-      </div>
-
-      <div class="card topic-card">
-        <span class="tier">A-Level</span>
-        <h3>Topics:</h3>
-        <ul>
-          <li>Classical Mechanics</li>
-          <li>Materials</li>
-          <li>Fields: Gravitational, Electric, Magnetic</li>
-          <li>Quantum and Nuclear Physics</li>
-          <li>Thermodynamics</li>
-          <li>Calculus</li>
-          <li>Statistics and Probability</li>
-          <li>Complex Numbers</li>
-        </ul>
-      </div>
-
-      <div class="card topic-card">
-        <span class="tier">University</span>
-        <h3>Topics:</h3>
-        <ul>
-          <li>Classical Physics</li>
-          <li>Electromagnetism</li>
-          <li>Quantum Mechanics</li>
-          <li>Statistical Mechanics</li>
-          <li>Special Relativity</li>
-          <li>Linear Algebra</li>
-          <li>Advanced Calculus</li>
-          <li>Python</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section id="book">
-  <div class="wrap">
-    <h2 class="section-head">Book a session</h2>
-    <p class="section-sub">
-      Pick any time that you are available and please tell me what you are working on. I'll text you back to confirm the session.
-      Your first session and any associated enquiries are free.
-    </p>
-
-    <div class="booking-card">
-
-      <div class="setup-warning" id="setup-warning">
-        <strong>Setup needed (only you can see this once fixed).</strong>
-        This form won't deliver yet — open <code>index.html</code>, find
-        <code>WEB3FORMS_ACCESS_KEY</code> near the bottom, and paste in your free key from
-        <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer">web3forms.com</a>.
-        See <code>README.md</code> for the two-minute walkthrough.
-      </div>
-
-      <form id="booking-form" novalidate>
-
-        <fieldset>
-          <legend>Which subject do you need help with?</legend>
-          <div class="choice-row" role="radiogroup" aria-label="Subject">
-            <label class="choice">
-              <input type="radio" name="subject_area" value="Physics" required>
-              <span>Physics</span>
-            </label>
-            <label class="choice">
-              <input type="radio" name="subject_area" value="Maths" required>
-              <span>Maths</span>
-            </label>
-            <label class="choice">
-              <input type="radio" name="subject_area" value="Both">
-              <span>Both</span>
-            </label>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>At what level?</legend>
-          <div class="choice-row" role="radiogroup" aria-label="Level">
-            <label class="choice">
-              <input type="radio" name="level" value="GCSE" required>
-              <span>GCSE</span>
-            </label>
-            <label class="choice">
-              <input type="radio" name="level" value="A-Level">
-              <span>A-Level</span>
-            </label>
-            <label class="choice">
-              <input type="radio" name="level" value="University">
-              <span>University</span>
-            </label>
-            <label class="choice">
-              <input type="radio" name="level" value="Other">
-              <span>Other</span>
-            </label>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>When are you available?</legend>
-          <div id="slot-picker" aria-live="polite">
-            <p class="hint">Loading available times…</p>
-          </div>
-          <p class="tz-note" id="tz-note"></p>
-        </fieldset>
-
-        <fieldset>
-          <legend>How do I reach you?</legend>
-          <div class="field-row">
-            <div class="field">
-              <label class="field-label" for="name">Your name</label>
-              <input type="text" id="name" name="name" autocomplete="name" placeholder="Alex Taylor" maxlength="80" required>
-            </div>
-            <div class="field">
-              <label class="field-label" for="phone">Mobile number</label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="07123 456789" maxlength="25" inputmode="tel" required>
-            </div>
-          </div>
-          <div class="field">
-            <label class="field-label" for="email">Email <span style="font-weight:400;text-transform:none;font-family:Barlow,sans-serif;color:#5A6180;">(optional)</span></label>
-            <input type="email" id="email" name="email" autocomplete="email" placeholder="alex@example.com" maxlength="120">
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Details</legend>
-          <p class="hint">
+        <div>
+          <h2>Hi, I'm Matt</h2>
+          <p class="role">
+            Currently, I am physics PhD student at Imperial College London. I have over two years of
+            experience teaching physics and maths. I focus on building a student's conceptual
+            understanding and utilising basic rules to solve every exam problem.
           </p>
-          <textarea id="message" name="message" maxlength="1500" required
-            placeholder="e.g. Edexcel A-Level physics, mocks in January. Fields and capacitors aren't clicking and I keep losing marks on the 6-markers."></textarea>
-        </fieldset>
 
-        <div class="hp" aria-hidden="true">
-          <label>Leave this empty <input type="text" name="botcheck" tabindex="-1" autocomplete="off"></label>
+          <div class="badges">
+            <span class="badge purple">1st session free</span>
+            <span class="badge green">Zoom sessions</span>
+            <span class="badge orange">Custom learning materials</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn" href="#book">Book a session</a>
+            <a class="btn" href="#about">How I teach</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-bar">
+      <a href="https://wa.me/447923670931" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path
+            d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.18 8.18 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24z"
+          />
+        </svg>
+        <span>+447923670931</span>
+      </a>
+      <small>Please send a message directly on WhatsApp or via the booking form below.</small>
+    </div>
+
+    <section id="credentials">
+      <div class="wrap">
+        <div class="grid-2">
+          <div class="card">
+            <h3>Qualifications</h3>
+            <ul>
+              <li>
+                Graduated with the
+                <strong>highest percentage grade at the Master's and Undergraduate level</strong>
+                from a Russell Group university.
+              </li>
+              <li>
+                Currently undertaking
+                <strong>PhD studies in physics at Imperial College London</strong>.
+              </li>
+              <li><strong>Two years</strong> of one-to-one teaching experience.</li>
+              <li>
+                Research experience with <strong>CERN</strong>, the
+                <strong>University of Oxford</strong> and <strong>Imperial College London</strong>.
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>What do students say?</h3>
+            <blockquote class="quote">"Made my revision feel so much more productive."</blockquote>
+            <blockquote class="quote">"Drastically improved my confidence."</blockquote>
+            <blockquote class="quote">
+              "Matt helped me turn equations into understanding."
+            </blockquote>
+            <blockquote class="quote">
+              "He has a way of explaining concepts that is clear and makes sense."
+            </blockquote>
+            <blockquote class="quote">
+              "He was very supportive — there were no stupid questions."
+            </blockquote>
+          </div>
         </div>
 
-        <button class="btn crimson" type="submit" id="submit-btn" style="width:100%;font-size:1.2rem;padding:17px;">
-          Send my request
-        </button>
+        <figure class="featured-review">
+          <blockquote>
+            I really struggled with A-Level Physics, especially as I hadn't taken A-Level Maths.
+            This made many concepts difficult to grasp initially. After trying other tutors, I was
+            so lucky to find Matt. He has a way of explaining concepts in a way that is clear and
+            makes sense, using words and examples to facilitate my understanding. His patience and
+            tutoring style made me feel at ease and I felt I could ask anything.
+            <strong>I cannot recommend him highly enough!</strong>
+          </blockquote>
+          <figcaption>A-Level Physics student</figcaption>
+        </figure>
+      </div>
+    </section>
 
-        <div class="status" id="status" role="status" aria-live="polite"></div>
-
-        <p class="privacy">
-          If you would rather not use the form, please message me on
-          <a href="https://wa.me/447923670931" target="_blank" rel="noopener noreferrer">WhatsApp</a>.
+    <section id="about">
+      <div class="wrap">
+        <h2 class="section-head">How I teach</h2>
+        <p class="section-sub">
+          Most of my sessions operate via Zoom, although in some cases I can meet in person. I focus
+          on building a student's conceptual understanding and utilising basic rules to solve every
+          exam problem.
         </p>
 
-      </form>
-    </div>
-  </div>
-</section>
+        <div class="card">
+          <p>
+            Typically, I ask which topic the student wants to improve in. Firstly, we make sure
+            the conceptual background is clear. Secondly, we work through a few problems together.
+            I can provide problem sheets and past papers, or the student can bring their own from
+            lessons. If the problems are still difficult, we take link it back to basics: I find
+            making animations and diagrams is a great way to learn.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <div class="affil">
-    <img class="logo-cern" src="assets/cern.png" alt="CERN" width="340" height="340">
-    <img class="logo-imperial" src="assets/imperial.png" alt="Imperial College London" width="1400" height="154">
-  </div>
-  <small>
-    Physics &amp; Maths Tutoring · Sessions over Zoom ·
-    <a href="https://wa.me/447923670931">+447923670931</a>
-  </small>
-</footer>
+    <section id="subjects">
+      <div class="wrap">
+        <h2 class="section-head">What I cover</h2>
+        <p class="section-sub">
+          All major exam boards — AQA, Edexcel, OCR and WJEC. I can help with most stages of physics
+          and maths; from GCSEs to the University level.
+        </p>
 
-<script src="availability.js"></script>
-<script>
-const WEB3FORMS_ACCESS_KEY = "b1e5dd23-90ef-490f-9d9b-e9e4ecdb8d79";
-const SITE_NAME = "Physics & Maths Tutoring";
+        <div class="grid-3">
+          <div class="card topic-card">
+            <span class="tier">GCSE</span>
+            <h3>Topics:</h3>
+            <ul>
+              <li>Forces, Motion and Energy</li>
+              <li>Electricity and Magnetism</li>
+              <li>Waves, Radioactivity and Space</li>
+              <li>Algebra</li>
+              <li>Geometry</li>
+              <li>Probability</li>
+              <li>Exam Technique and Past Papers</li>
+            </ul>
+          </div>
 
-const DAY_KEYS = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+          <div class="card topic-card">
+            <span class="tier">A-Level</span>
+            <h3>Topics:</h3>
+            <ul>
+              <li>Classical Mechanics</li>
+              <li>Materials</li>
+              <li>Fields: Gravitational, Electric, Magnetic</li>
+              <li>Quantum and Nuclear Physics</li>
+              <li>Thermodynamics</li>
+              <li>Calculus</li>
+              <li>Statistics and Probability</li>
+              <li>Complex Numbers</li>
+            </ul>
+          </div>
 
-function isoDate(d){
-  return d.getFullYear() + "-" +
-         String(d.getMonth()+1).padStart(2,"0") + "-" +
-         String(d.getDate()).padStart(2,"0");
-}
+          <div class="card topic-card">
+            <span class="tier">University</span>
+            <h3>Topics:</h3>
+            <ul>
+              <li>Classical Physics</li>
+              <li>Electromagnetism</li>
+              <li>Quantum Mechanics</li>
+              <li>Statistical Mechanics</li>
+              <li>Special Relativity</li>
+              <li>Linear Algebra</li>
+              <li>Advanced Calculus</li>
+              <li>Python</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-function prettyDate(d){
-  return d.toLocaleDateString("en-GB", { weekday:"long", day:"numeric", month:"long" });
-}
+    <section id="book">
+      <div class="wrap">
+        <h2 class="section-head">Book a session</h2>
+        <p class="section-sub">
+          Pick any time that you are available and please tell me what you are working on. I'll text
+          you back to confirm the session. Your first session and any associated enquiries are free.
+        </p>
 
-function slotStart(date, range){
-  const [h,m] = range.split("-")[0].split(":").map(Number);
-  const d = new Date(date);
-  d.setHours(h, m, 0, 0);
-  return d;
-}
+        <div class="booking-card">
+          <div class="setup-warning" id="setup-warning">
+            <strong>Setup needed (only you can see this once fixed).</strong>
+            This form won't deliver yet — open <code>script.js</code>, find
+            <code>WEB3FORMS_ACCESS_KEY</code> near the top, and paste in your free key from
+            <a href="https://web3forms.com" target="_blank" rel="noopener noreferrer"
+              >web3forms.com</a
+            >.
+          </div>
 
-function prettyTime(range){
-  const [from,to] = range.split("-");
-  const fmt = t => {
-    let [h,m] = t.split(":").map(Number);
-    const ampm = h >= 12 ? "pm" : "am";
-    h = h % 12 || 12;
-    return m ? `${h}.${String(m).padStart(2,"0")}${ampm}` : `${h}${ampm}`;
-  };
-  return `${fmt(from)}–${fmt(to)}`;
-}
+          <form id="booking-form" novalidate>
+            <fieldset>
+              <legend>Which subject do you need help with?</legend>
+              <div class="choice-row" role="radiogroup" aria-label="Subject">
+                <label class="choice">
+                  <input type="radio" name="subject_area" value="Physics" required />
+                  <span>Physics</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="subject_area" value="Maths" required />
+                  <span>Maths</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="subject_area" value="Both" />
+                  <span>Both</span>
+                </label>
+              </div>
+            </fieldset>
 
-function buildSlots(){
-  const cfg = window.AVAILABILITY;
-  if(!cfg) return [];
+            <fieldset>
+              <legend>At what level?</legend>
+              <div class="choice-row" role="radiogroup" aria-label="Level">
+                <label class="choice">
+                  <input type="radio" name="level" value="GCSE" required />
+                  <span>GCSE</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="level" value="A-Level" />
+                  <span>A-Level</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="level" value="University" />
+                  <span>University</span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="level" value="Other" />
+                  <span>Other</span>
+                </label>
+              </div>
+            </fieldset>
 
-  const now = new Date();
-  const cutoff = new Date(now.getTime() + (cfg.minNoticeHours || 0) * 3600 * 1000);
-  const days = (cfg.weeksAhead || 3) * 7;
-  const out = [];
+            <fieldset>
+              <legend>When are you available?</legend>
+              <div id="slot-picker" aria-live="polite">
+                <p class="hint">Loading available times…</p>
+              </div>
+              <p class="tz-note" id="tz-note"></p>
+            </fieldset>
 
-  for(let i = 0; i <= days; i++){
-    const date = new Date(now);
-    date.setDate(now.getDate() + i);
-    date.setHours(0,0,0,0);
+            <fieldset>
+              <legend>How do I reach you?</legend>
+              <div class="field-row">
+                <div class="field">
+                  <label class="field-label" for="name">Your name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    placeholder="Alex Taylor"
+                    maxlength="80"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label class="field-label" for="phone">Mobile number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="tel"
+                    placeholder="07123 456789"
+                    maxlength="25"
+                    inputmode="tel"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label class="field-label" for="email"
+                  >Email <span class="field-optional">(optional)</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="alex@example.com"
+                  maxlength="120"
+                />
+              </div>
+            </fieldset>
 
-    const iso = isoDate(date);
-    if((cfg.unavailableDates || []).includes(iso)) continue;
+            <fieldset>
+              <legend>Details</legend>
+              <textarea
+                id="message"
+                name="message"
+                maxlength="1500"
+                required
+                placeholder="e.g. Edexcel A-Level physics, mocks in January. Fields and capacitors aren't clicking and I keep losing marks on the 6-markers."
+              ></textarea>
+            </fieldset>
 
-    const weekly = (cfg.slots && cfg.slots[DAY_KEYS[date.getDay()]]) || [];
-    const extra  = (cfg.extraSlots && cfg.extraSlots[iso]) || [];
-    const times  = [...new Set([...weekly, ...extra])].sort();
+            <div class="hp" aria-hidden="true">
+              <label
+                >Leave this empty
+                <input type="text" name="botcheck" tabindex="-1" autocomplete="off"
+              /></label>
+            </div>
 
-    const usable = times.filter(t => slotStart(date, t) > cutoff);
-    if(usable.length) out.push({ iso, date, times: usable });
-  }
-  return out;
-}
+            <button class="btn crimson" type="submit" id="submit-btn">Send my request</button>
 
-function renderSlots(){
-  const host = document.getElementById("slot-picker");
-  const days = buildSlots();
-  host.innerHTML = "";
+            <div class="status" id="status" role="status" aria-live="polite"></div>
 
-  if(!days.length){
-    host.innerHTML = '<p class="hint">I need to update my availability!</p>';
-  }
+            <p class="privacy">
+              If you would rather not use the form, please message me on
+              <a href="https://wa.me/447923670931" target="_blank" rel="noopener noreferrer"
+                >WhatsApp</a
+              >.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
 
-  days.forEach(day => {
-    const wrap = document.createElement("div");
-    wrap.className = "slot-day";
+    <footer>
+      <div class="affil">
+        <img class="logo-cern" src="assets/cern.png" alt="CERN" width="340" height="340" />
+        <img
+          class="logo-imperial"
+          src="assets/imperial.png"
+          alt="Imperial College London"
+          width="1400"
+          height="154"
+        />
+      </div>
+      <small>
+        Physics &amp; Maths Tutoring · Sessions over Zoom ·
+        <a href="https://wa.me/447923670931">+447923670931</a>
+      </small>
+    </footer>
 
-    const h = document.createElement("h4");
-    h.textContent = prettyDate(day.date);
-    wrap.appendChild(h);
-
-    const list = document.createElement("div");
-    list.className = "slot-list";
-
-    day.times.forEach(range => {
-      const id = `slot-${day.iso}-${range.replace(/[:\-]/g,"")}`;
-      const label = document.createElement("label");
-      label.className = "slot";
-      label.innerHTML =
-        `<input type="checkbox" id="${id}" data-slot value="${prettyDate(day.date)}, ${prettyTime(range)}">` +
-        `<span>${prettyTime(range)}</span>`;
-      list.appendChild(label);
-    });
-
-    wrap.appendChild(list);
-    host.appendChild(wrap);
-  });
-
-  const flex = document.createElement("label");
-  flex.className = "slot flexible";
-  flex.style.display = "inline-block";
-  flex.style.marginTop = "6px";
-  flex.innerHTML =
-    '<input type="checkbox" id="slot-flexible" data-slot value="None of these — see message">' +
-    '<span>Sort Timing Later</span>';
-  host.appendChild(flex);
-
-  const cfg = window.AVAILABILITY || {};
-  const note = document.getElementById("tz-note");
-  const bits = [];
-  if(cfg.timezoneLabel) bits.push(`All times shown in ${cfg.timezoneLabel}.`);
-  if(cfg.note) bits.push(cfg.note);
-  note.textContent = bits.join(" ");
-}
-
-renderSlots();
-
-const form    = document.getElementById("booking-form");
-const status  = document.getElementById("status");
-const btn     = document.getElementById("submit-btn");
-const keyIsSet = WEB3FORMS_ACCESS_KEY && !WEB3FORMS_ACCESS_KEY.startsWith("YOUR_");
-
-if(!keyIsSet){
-  document.getElementById("setup-warning").classList.add("show");
-}
-
-const PAGE_LOADED_AT   = Date.now();
-const MIN_FILL_SECONDS = 4;
-const COOLDOWN_SECONDS = 30;
-const MAX_PER_SESSION  = 5;
-let lastSubmitAt = 0, submitCount = 0;
-
-function esc(s){
-  return String(s).replace(/[&<>"']/g, c => (
-    { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" }[c]
-  ));
-}
-
-function show(kind, msg){
-  status.className = `status show ${kind}`;
-  status.innerHTML = msg;
-  status.scrollIntoView({ block:"nearest", behavior:"smooth" });
-}
-
-function validPhone(v){
-  const digits = v.replace(/[^\d]/g, "");
-  return digits.length >= 9 && digits.length <= 15;
-}
-
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  status.className = "status";
-
-  const fd = new FormData(form);
-  const name    = (fd.get("name")    || "").toString().trim();
-  const phone   = (fd.get("phone")   || "").toString().trim();
-  const message = (fd.get("message") || "").toString().trim();
-  const area    = fd.get("subject_area");
-  const level   = fd.get("level");
-
-  if(!area)              return show("err", "Please pick a subject.");
-  if(!level)             return show("err", "Please pick a level.");
-  if(!name)              return show("err", "Please add your name.");
-  if(!validPhone(phone)) return show("err", "That phone number doesn't look right — please check it.");
-  if(message.length < 5) return show("err", "Please add a line about what you're after.");
-
-  if((fd.get("botcheck") || "").toString().trim()){
-    return show("ok", "Thanks — that's with me.");
-  }
-
-  if((Date.now() - PAGE_LOADED_AT) / 1000 < MIN_FILL_SECONDS){
-    return show("err", "That came through unusually quickly — please try sending it again.");
-  }
-
-  const gap = (Date.now() - lastSubmitAt) / 1000;
-  if(lastSubmitAt && gap < COOLDOWN_SECONDS){
-    return show("info", `That's just been sent — give it ${Math.ceil(COOLDOWN_SECONDS - gap)} seconds before sending another.`);
-  }
-  if(submitCount >= MAX_PER_SESSION){
-    return show("info",
-      "That's several requests already. Please message me on " +
-      "<a href='https://wa.me/447923670931' rel='noopener noreferrer'>WhatsApp</a> instead.");
-  }
-
-  const times = [...document.querySelectorAll("[data-slot]:checked")].map(i => i.value);
-
-  if(!keyIsSet){
-    return show("info",
-      "This form isn't connected yet. In the meantime, please message me on " +
-      "<a href='https://wa.me/447923670931'>WhatsApp</a>.");
-  }
-
-  const payload = {
-    access_key: WEB3FORMS_ACCESS_KEY,
-    subject: `📚 ${area} (${level}) enquiry from ${name}`,
-    from_name: SITE_NAME,
-    "Name": name,
-    "Phone": phone,
-    "Email": fd.get("email") || "—",
-    "Subject area": area,
-    "Level": level,
-    "Preferred times": times.length ? times.join("  •  ") : "Not specified",
-    "Message": message,
-    "Sent at": new Date().toLocaleString("en-GB"),
-    botcheck: fd.get("botcheck") || ""
-  };
-
-  lastSubmitAt = Date.now();
-  submitCount++;
-
-  btn.disabled = true;
-  btn.textContent = "Sending…";
-
-  try{
-    const res = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify(payload)
-    });
-    const data = await res.json();
-
-    if(data.success){
-      show("ok", `Thanks ${esc(name.split(" ")[0])} — that's with me. ` +
-                 `I'll text ${esc(phone)} to confirm, usually within a day. ` +
-                 `Remember your first session is free.`);
-      form.reset();
-      document.querySelectorAll("[data-slot]:checked").forEach(i => i.checked = false);
-    }else{
-      throw new Error(data.message || "Unknown error");
-    }
-  }catch(err){
-    show("err",
-      "Something went wrong sending that — sorry. Please message me on " +
-      "<a href='https://wa.me/447923670931'>WhatsApp</a> instead and I'll pick it up straight away.");
-  }finally{
-    btn.disabled = false;
-    btn.textContent = "Send my request";
-  }
-});
-</script>
-</body>
+    <script src="availability.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

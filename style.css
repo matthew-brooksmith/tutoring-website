@@ -1,0 +1,870 @@
+/* ============================================================
+   Design tokens — colours, shadow, layout width
+   ============================================================ */
+:root {
+  --blue-deep: #0000cd;
+  --blue-mid: #5a77ef;
+  --blue-page: #6f8bc8;
+  --blue-pale: #bdcae6;
+  --crimson: #ac1b45;
+  --green: #00bf63;
+  --purple: #8c52ff;
+  --orange: #cd7b00;
+  --ink: #12183a;
+  --white: #ffffff;
+
+  --shadow-hard: 0 6px 0 rgba(0, 0, 0, 0.22);
+  --radius: 18px;
+  --maxw: 1080px;
+}
+
+/* ============================================================
+   Reset & base
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: clip;
+  background: var(--blue-page);
+  color: var(--ink);
+  font-family:
+    "Barlow",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+.display {
+  font-family: "Anton", Impact, "Arial Narrow Bold", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.05;
+}
+
+a {
+  color: inherit;
+}
+
+/* ============================================================
+   Header — banner + level nav
+   ============================================================ */
+.banner {
+  background: var(--blue-deep);
+  color: var(--white);
+  text-align: center;
+  padding: 22px 20px 18px;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.25);
+}
+.banner h1 {
+  font-size: clamp(1.75rem, 7.2vw, 4.4rem);
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.28);
+}
+
+.levels {
+  background: var(--blue-mid);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  gap: clamp(14px, 6vw, 80px);
+  flex-wrap: wrap;
+  padding: 13px 20px;
+  font-family: "Anton", Impact, sans-serif;
+  font-size: clamp(1.25rem, 5vw, 3rem);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* ============================================================
+   Hero — photo + intro
+   ============================================================ */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 38px;
+  align-items: center;
+  padding: 52px 0 44px;
+}
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    justify-items: center;
+    text-align: center;
+    padding: 36px 0 32px;
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) and (min-width: 700px) {
+  .hero {
+    grid-template-columns: 190px 1fr;
+    gap: 52px;
+    padding: 20px 0;
+  }
+}
+
+.photo-frame {
+  background: var(--white);
+  padding: 13px 13px 13px;
+  border: 3px solid var(--ink);
+  border-radius: 6px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.32);
+  transform: rotate(-2.2deg);
+  transition: transform 0.35s ease;
+  width: 100%;
+  max-width: 300px;
+}
+.photo-frame:hover {
+  transform: rotate(0deg) scale(1.015);
+}
+.photo-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+.photo-frame figcaption {
+  font-family: "Anton", Impact, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  padding-top: 11px;
+}
+@media (orientation: landscape) and (max-height: 500px) and (min-width: 700px) {
+  .photo-frame {
+    max-width: 190px;
+    transform: rotate(-2.2deg) translateX(-14px);
+  }
+  .photo-frame:hover {
+    transform: translateX(-14px) scale(1.015);
+  }
+}
+
+.hero h2 {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  color: var(--white);
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+.hero .role {
+  font-size: clamp(1rem, 2.6vw, 1.2rem);
+  font-weight: 600;
+  color: var(--white);
+  margin: 10px 0 20px;
+  max-width: 44ch;
+}
+@media (max-width: 900px) {
+  .hero .role {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+@media (max-width: 900px) {
+  .badges {
+    justify-content: center;
+  }
+}
+.badge {
+  font-family: "Anton", Impact, sans-serif;
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: clamp(1.05rem, 2.9vw, 1.45rem);
+  letter-spacing: 0.03em;
+  padding: 13px 22px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-hard);
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.18);
+}
+.badge.purple {
+  background: var(--purple);
+}
+.badge.green {
+  background: var(--green);
+}
+.badge.orange {
+  background: var(--orange);
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 28px;
+}
+.cta-row .btn {
+  font-size: clamp(1.15rem, 3vw, 1.6rem);
+  padding: 18px 34px;
+  border-radius: 13px;
+}
+@media (max-width: 900px) {
+  .cta-row {
+    justify-content: center;
+  }
+}
+@media (max-width: 400px) {
+  .cta-row {
+    flex-direction: column;
+  }
+  .cta-row .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.btn {
+  display: inline-block;
+  font-family: "Anton", Impact, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1.05rem;
+  padding: 14px 26px;
+  border-radius: 11px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--white);
+  background: var(--blue-deep);
+  box-shadow: var(--shadow-hard);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    filter 0.12s ease;
+}
+.btn:hover {
+  filter: brightness(1.12);
+}
+.btn:active {
+  transform: translateY(5px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.22);
+}
+
+@media (hover: hover) {
+  .cta-row .btn {
+    transition:
+      transform 0.2s ease-out,
+      box-shadow 0.2s ease-out,
+      filter 0.15s ease;
+  }
+  .cta-row .btn:hover {
+    transform: scale(1.06);
+    transition:
+      transform 0.22s cubic-bezier(0.2, 0.85, 0.3, 1.4),
+      box-shadow 0.18s ease,
+      filter 0.12s ease;
+    box-shadow:
+      0 10px 0 rgba(0, 0, 0, 0.22),
+      0 16px 26px rgba(0, 0, 0, 0.25);
+  }
+  .cta-row .btn:active {
+    transform: scale(1.02) translateY(5px);
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.22);
+  }
+}
+.btn.crimson {
+  background: var(--crimson);
+}
+.btn.green {
+  background: var(--green);
+}
+.btn.ghost {
+  background: transparent;
+  border: 3px solid var(--white);
+  box-shadow: none;
+  padding: 11px 23px;
+}
+.btn.ghost:active {
+  transform: translateY(2px);
+}
+
+/* The booking form's submit button is full-width and larger than
+   other buttons on the page — replaces an inline style="" attribute
+   so the Content-Security-Policy can drop 'unsafe-inline' for styles. */
+#submit-btn {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 17px;
+}
+
+/* ============================================================
+   Contact bar (WhatsApp)
+   ============================================================ */
+.contact-bar {
+  background: var(--crimson);
+  border-top: 6px solid #000;
+  border-bottom: 6px solid #000;
+  padding: 18px 20px;
+  text-align: center;
+}
+.contact-bar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--white);
+  text-decoration: none;
+  font-family: "Anton", Impact, sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(1.15rem, 4.4vw, 2.35rem);
+  letter-spacing: 0.02em;
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.3);
+  transform-origin: center;
+}
+@media (hover: hover) {
+  .contact-bar a {
+    transition:
+      transform 0.2s cubic-bezier(0.2, 0.85, 0.3, 1.25),
+      filter 0.15s ease;
+  }
+  .contact-bar a:hover {
+    transform: scale(1.12);
+    filter: brightness(1.08);
+  }
+  .contact-bar a:active {
+    transform: scale(1.05);
+  }
+}
+.contact-bar svg {
+  width: 1.15em;
+  height: 1.15em;
+  flex: none;
+}
+.contact-bar small {
+  display: block;
+  font-family: "Barlow", sans-serif;
+  text-transform: none;
+  color: #ffd9e3;
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  margin-top: 6px;
+  text-shadow: none;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Section layout & headings
+   ============================================================ */
+section {
+  padding: 52px 0;
+}
+
+.section-head {
+  text-align: center;
+  color: var(--white);
+  font-size: clamp(1.7rem, 5vw, 2.7rem);
+  text-shadow: 0 4px 0 rgba(0, 0, 0, 0.28);
+  margin-bottom: 8px;
+}
+.section-head::after {
+  content: "";
+  display: block;
+  width: clamp(200px, 52%, 420px);
+  height: 6px;
+  margin: 18px auto 0;
+  background: var(--white);
+  border-radius: 3px;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.22);
+}
+.section-sub {
+  text-align: center;
+  color: #eaf0ff;
+  max-width: 60ch;
+  margin: 0 auto 32px;
+  font-weight: 500;
+}
+
+/* ============================================================
+   Cards & grids
+   ============================================================ */
+.card {
+  background: var(--blue-deep);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 28px 30px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+.card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+  color: var(--white);
+}
+.card ul {
+  margin: 0;
+  padding-left: 1.15em;
+}
+.card li {
+  margin-bottom: 11px;
+}
+.card li:last-child {
+  margin-bottom: 0;
+}
+.card p {
+  margin: 0 0 14px;
+}
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+/* ============================================================
+   Testimonials
+   ============================================================ */
+.quote {
+  margin: 0 0 18px;
+  padding-left: 16px;
+  border-left: 5px solid var(--green);
+  font-size: 1.06rem;
+  font-style: italic;
+}
+.quote:last-child {
+  margin-bottom: 0;
+}
+
+.featured-review {
+  margin: 26px 0 0;
+  background: var(--white);
+  color: var(--ink);
+  border-radius: var(--radius);
+  border-left: 10px solid var(--green);
+  padding: clamp(26px, 4vw, 38px) clamp(24px, 4vw, 44px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  position: relative;
+}
+.featured-review::before,
+.featured-review::after {
+  font-family: Georgia, serif;
+  position: absolute;
+  font-size: 5.5rem;
+  line-height: 1;
+  color: var(--green);
+  opacity: 0.28;
+  pointer-events: none;
+  z-index: 0;
+}
+.featured-review::before {
+  content: "\201C";
+  top: -8px;
+  left: 14px;
+}
+.featured-review::after {
+  content: "\201D";
+  bottom: -20px;
+  right: 18px;
+}
+
+.featured-review blockquote {
+  margin: 0;
+  font-size: clamp(1.02rem, 2.2vw, 1.2rem);
+  line-height: 1.7;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+.featured-review strong {
+  font-style: normal;
+  color: var(--blue-deep);
+}
+.featured-review figcaption {
+  position: relative;
+  z-index: 1;
+  margin-top: 16px;
+  font-family: "Anton", Impact, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.88rem;
+  color: var(--crimson);
+}
+.featured-review figcaption::before {
+  content: "— ";
+}
+
+/* ============================================================
+   Subject/topic cards
+   ============================================================ */
+.topic-card {
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+}
+.topic-card .tier {
+  display: block;
+  background: var(--blue-deep);
+  color: var(--white);
+  font-family: "Anton", Impact, sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 5.2vw, 2.3rem);
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 12px 14px;
+  border-radius: 11px;
+  margin: 0 0 14px;
+  box-shadow: var(--shadow-hard);
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.22);
+}
+.topic-card h3 {
+  color: #48507a;
+  font-size: clamp(1.2rem, 2.6vw, 1.4rem);
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.topic-card ul {
+  padding-left: 1.1em;
+}
+.topic-card li {
+  margin-bottom: 8px;
+}
+
+/* ============================================================
+   Booking form
+   ============================================================ */
+.booking-card {
+  background: var(--white);
+  color: var(--ink);
+  border-radius: var(--radius);
+  padding: clamp(22px, 4vw, 38px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  border: 3px solid var(--ink);
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0 0 26px;
+}
+fieldset:last-of-type {
+  margin-bottom: 20px;
+}
+
+legend,
+.field-label {
+  font-family: "Anton", Impact, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: var(--blue-deep);
+  padding: 0;
+  margin-bottom: 4px;
+  display: block;
+}
+.hint {
+  font-size: 0.92rem;
+  color: #5a6180;
+  margin: 0 0 12px;
+}
+
+/* Replaces an inline style="" attribute on the "Email (optional)" label. */
+.field-optional {
+  font-weight: 400;
+  text-transform: none;
+  font-family: "Barlow", sans-serif;
+  color: #5a6180;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  padding: 12px 14px;
+  border: 2px solid #c3cbe4;
+  border-radius: 10px;
+  background: #f7f9ff;
+  color: var(--ink);
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue-deep);
+  box-shadow: 0 0 0 4px rgba(0, 0, 205, 0.14);
+}
+textarea {
+  resize: vertical;
+  min-height: 104px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.field {
+  margin-bottom: 16px;
+}
+
+.choice-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.choice input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.choice span {
+  display: inline-block;
+  font-family: "Anton", Impact, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 12px 22px;
+  border-radius: 11px;
+  border: 3px solid var(--blue-deep);
+  color: var(--blue-deep);
+  background: var(--white);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+.choice input:checked + span {
+  background: var(--blue-deep);
+  color: var(--white);
+  box-shadow: var(--shadow-hard);
+}
+.choice input:focus-visible + span {
+  box-shadow: 0 0 0 4px rgba(0, 0, 205, 0.3);
+}
+
+.slot-day {
+  margin-bottom: 16px;
+}
+.slot-day h4 {
+  font-family: "Anton", Impact, sans-serif;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  color: var(--ink);
+  margin: 0 0 8px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #e2e7f5;
+}
+.slot-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.slot input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slot span {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 9px 15px;
+  border-radius: 9px;
+  border: 2px solid #c3cbe4;
+  background: #f7f9ff;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.13s ease;
+}
+.slot span:hover {
+  border-color: var(--green);
+}
+.slot input:checked + span {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+  font-weight: 700;
+}
+.slot input:focus-visible + span {
+  box-shadow: 0 0 0 4px rgba(0, 191, 99, 0.35);
+}
+.slot.flexible span {
+  border-style: dashed;
+}
+
+.tz-note {
+  font-size: 0.9rem;
+  color: #5a6180;
+  margin-top: 12px;
+}
+
+.privacy {
+  font-size: 0.88rem;
+  color: #5a6180;
+  margin-top: 16px;
+}
+
+/* ============================================================
+   Form status messages & setup warning
+   ============================================================ */
+.status {
+  margin-top: 18px;
+  padding: 15px 18px;
+  border-radius: 11px;
+  font-weight: 600;
+  display: none;
+}
+.status.show {
+  display: block;
+}
+.status.ok {
+  background: #e4fbef;
+  color: #0a6b3c;
+  border: 2px solid var(--green);
+}
+.status.err {
+  background: #fde8ee;
+  color: #8a102f;
+  border: 2px solid var(--crimson);
+}
+.status.info {
+  background: #fff5df;
+  color: #7a5200;
+  border: 2px solid var(--orange);
+}
+
+.setup-warning {
+  background: #fff5df;
+  border: 2px dashed var(--orange);
+  color: #7a5200;
+  padding: 14px 18px;
+  border-radius: 11px;
+  margin-bottom: 22px;
+  font-size: 0.94rem;
+  display: none;
+}
+.setup-warning.show {
+  display: block;
+}
+.setup-warning code {
+  background: rgba(0, 0, 0, 0.07);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.hp {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+  background: var(--blue-pale);
+  color: var(--ink);
+  padding: 26px 20px;
+  text-align: center;
+}
+.affil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(26px, 7vw, 64px);
+  flex-wrap: wrap;
+}
+.affil img {
+  display: block;
+  width: auto;
+}
+.logo-cern {
+  height: clamp(46px, 9vw, 62px);
+}
+.logo-imperial {
+  height: clamp(19px, 3.8vw, 26px);
+}
+footer small {
+  display: block;
+  margin-top: 14px;
+  color: #3a4468;
+  letter-spacing: 0;
+  font-family: "Barlow", sans-serif;
+  text-transform: none;
+}
+
+/* ============================================================
+   Accessibility helpers
+   ============================================================ */
+.skip {
+  position: absolute;
+  left: -9999px;
+  background: var(--white);
+  color: var(--blue-deep);
+  padding: 12px 18px;
+  z-index: 100;
+  border-radius: 0 0 10px 0;
+  font-weight: 700;
+}
+.skip:focus {
+  left: 0;
+  top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  .photo-frame {
+    transform: none;
+  }
+  .cta-row .btn:hover {
+    transform: none;
+  }
+}
