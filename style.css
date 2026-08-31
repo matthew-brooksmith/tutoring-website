@@ -328,6 +328,16 @@ a {
   padding: 18px 20px;
   text-align: center;
 }
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 32px;
+}
+.contact-links .email-text {
+  font-size: clamp(0.85rem, 2.6vw, 1.3rem);
+}
 .contact-bar a {
   display: inline-flex;
   align-items: center;
