@@ -51,7 +51,7 @@ jobs:
           # published — in particular assets/poster.png, which isn't used
           # by index.html and was previously being served anyway.
           cp index.html style.css script.js availability.js _site/
-          cp assets/matt.jpg assets/cern.png assets/imperial.png _site/assets/
+          cp assets/matt.jpg assets/cern.png assets/imperial.png assets/polar_with_r_graph.gif _site/assets/
           # macOS folder metadata should never reach the web.
           find _site -name '.DS_Store' -delete
           find _site -name '._*' -delete
