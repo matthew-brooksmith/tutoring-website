@@ -113,15 +113,6 @@ function renderSlots() {
     host.appendChild(wrap);
   });
 
-  const flex = document.createElement("label");
-  flex.className = "slot flexible";
-  flex.style.display = "inline-block";
-  flex.style.marginTop = "6px";
-  flex.innerHTML =
-    '<input type="checkbox" id="slot-flexible" data-slot value="None of these — see message">' +
-    "<span>Sort Timing Later</span>";
-  host.appendChild(flex);
-
   const cfg = window.AVAILABILITY || {};
   const note = document.getElementById("tz-note");
   const bits = [];

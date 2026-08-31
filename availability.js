@@ -20,5 +20,5 @@ window.AVAILABILITY = {
 
   extraSlots: {},
 
-  note: 'Can\'t see a time that works? Pick "None of these" below and tell me what suits you — I can usually be flexible.',
+  note: "If there are no times listed here that suit you, please message me to arrange something.",
 };
