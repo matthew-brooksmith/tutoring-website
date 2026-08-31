@@ -445,6 +445,29 @@ section {
 .card p:last-child {
   margin-bottom: 0;
 }
+.animation-demo {
+  box-sizing: border-box;
+  margin: 20px auto 0;
+  width: 100%;
+  max-width: 420px;
+  background: var(--white);
+  padding: 12px 12px 10px;
+  border-radius: 6px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+}
+.animation-demo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+.animation-demo figcaption {
+  font-style: italic;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink);
+  padding-top: 9px;
+}
 
 .grid-2 {
   display: grid;
@@ -732,10 +755,6 @@ textarea {
 .slot input:focus-visible + span {
   box-shadow: 0 0 0 4px rgba(0, 191, 99, 0.35);
 }
-.slot.flexible span {
-  border-style: dashed;
-}
-
 .tz-note {
   font-size: 0.9rem;
   color: #5a6180;
