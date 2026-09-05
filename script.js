@@ -224,7 +224,6 @@ form.addEventListener("submit", async (e) => {
     from_name: SITE_NAME,
     Name: name,
     Phone: phone,
-    Email: fd.get("email") || "—",
     "Subject area": area,
     Level: level,
     "Preferred times": times.length ? times.join("  •  ") : "Not specified",
