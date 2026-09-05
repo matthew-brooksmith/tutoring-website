@@ -203,8 +203,8 @@ form.addEventListener("submit", async (e) => {
   if (submitCount >= MAX_PER_SESSION) {
     return show(
       "info",
-      "That's several requests already. Please message me on " +
-        "<a href='https://wa.me/447923670931' rel='noopener noreferrer'>WhatsApp</a> instead.",
+      "That's several requests already. Please email me at " +
+        "<a href='mailto:mattbrookstutoring@outlook.com'>mattbrookstutoring@outlook.com</a> instead.",
     );
   }
 
@@ -213,8 +213,8 @@ form.addEventListener("submit", async (e) => {
   if (!keyIsSet) {
     return show(
       "info",
-      "This form isn't connected yet. In the meantime, please message me on " +
-        "<a href='https://wa.me/447923670931'>WhatsApp</a>.",
+      "This form isn't connected yet. In the meantime, please email me at " +
+        "<a href='mailto:mattbrookstutoring@outlook.com'>mattbrookstutoring@outlook.com</a>.",
     );
   }
 
@@ -262,8 +262,8 @@ form.addEventListener("submit", async (e) => {
   } catch (err) {
     show(
       "err",
-      "Something went wrong sending that — sorry. Please message me on " +
-        "<a href='https://wa.me/447923670931'>WhatsApp</a> instead and I'll pick it up straight away.",
+      "Something went wrong sending that — sorry. Please email me at " +
+        "<a href='mailto:mattbrookstutoring@outlook.com'>mattbrookstutoring@outlook.com</a> instead and I'll pick it up straight away.",
     );
   } finally {
     btn.disabled = false;
