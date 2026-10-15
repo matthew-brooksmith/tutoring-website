@@ -13,7 +13,7 @@
 // ever deliver mail to the address it was registered with, so
 // exposing it in client-side code is how the service is designed
 // to work (see https://web3forms.com/). It is not a secret.
-const WEB3FORMS_ACCESS_KEY = "b1e5dd23-90ef-490f-9d9b-e9e4ecdb8d79";
+const WEB3FORMS_ACCESS_KEY = "763ce697-e4e4-4fe2-865c-2cba71d5956d";
 const SITE_NAME = "Physics & Maths Tutoring";
 
 const DAY_KEYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
