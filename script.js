@@ -203,8 +203,7 @@ form.addEventListener("submit", async (e) => {
   if (submitCount >= MAX_PER_SESSION) {
     return show(
       "info",
-      "That's several requests already. Please email me at " +
-        "<a href='mailto:REMOVED'>REMOVED</a> instead.",
+      "That's several requests already — I'll be in touch about the ones you've sent.",
     );
   }
 
@@ -213,8 +212,7 @@ form.addEventListener("submit", async (e) => {
   if (!keyIsSet) {
     return show(
       "info",
-      "This form isn't connected yet. In the meantime, please email me at " +
-        "<a href='mailto:REMOVED'>REMOVED</a>.",
+      "This form isn't connected yet — please try again later.",
     );
   }
 
@@ -261,8 +259,7 @@ form.addEventListener("submit", async (e) => {
   } catch (err) {
     show(
       "err",
-      "Something went wrong sending that — sorry. Please email me at " +
-        "<a href='mailto:REMOVED'>REMOVED</a> instead and I'll pick it up straight away.",
+      "Something went wrong sending that — sorry. Please try again in a few minutes.",
     );
   } finally {
     btn.disabled = false;

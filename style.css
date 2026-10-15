@@ -335,9 +335,6 @@ a {
   justify-content: center;
   gap: 10px 32px;
 }
-.contact-links .email-text {
-  font-size: clamp(0.85rem, 2.6vw, 1.3rem);
-}
 .contact-bar a {
   display: inline-flex;
   align-items: center;
@@ -759,12 +756,6 @@ textarea {
   font-size: 0.9rem;
   color: #5a6180;
   margin-top: 12px;
-}
-
-.privacy {
-  font-size: 0.88rem;
-  color: #5a6180;
-  margin-top: 16px;
 }
 
 /* ============================================================
