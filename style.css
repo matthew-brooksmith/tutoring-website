@@ -618,6 +618,13 @@ legend,
   margin-bottom: 4px;
   display: block;
 }
+.date-field {
+  max-width: 320px;
+}
+input[type="date"] {
+  min-height: 50px;
+  cursor: pointer;
+}
 .hint {
   font-size: 0.92rem;
   color: #5a6180;
@@ -635,6 +642,7 @@ legend,
 input[type="text"],
 input[type="tel"],
 input[type="email"],
+input[type="date"],
 select,
 textarea {
   width: 100%;
@@ -702,60 +710,6 @@ textarea {
 }
 .choice input:focus-visible + span {
   box-shadow: 0 0 0 4px rgba(0, 0, 205, 0.3);
-}
-
-.slot-day {
-  margin-bottom: 16px;
-}
-.slot-day h4 {
-  font-family: "Anton", Impact, sans-serif;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-  letter-spacing: 0.05em;
-  color: var(--ink);
-  margin: 0 0 8px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid #e2e7f5;
-}
-.slot-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-.slot input {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.slot span {
-  display: inline-block;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 9px 15px;
-  border-radius: 9px;
-  border: 2px solid #c3cbe4;
-  background: #f7f9ff;
-  cursor: pointer;
-  user-select: none;
-  transition: all 0.13s ease;
-}
-.slot span:hover {
-  border-color: var(--green);
-}
-.slot input:checked + span {
-  background: var(--green);
-  border-color: var(--green);
-  color: var(--white);
-  font-weight: 700;
-}
-.slot input:focus-visible + span {
-  box-shadow: 0 0 0 4px rgba(0, 191, 99, 0.35);
-}
-.tz-note {
-  font-size: 0.9rem;
-  color: #5a6180;
-  margin-top: 12px;
 }
 
 /* ============================================================

@@ -1,10 +1,8 @@
 // ============================================================
-// Physics & Maths Tutoring — booking form + availability widget
+// Physics & Maths Tutoring — booking form
 //
-// Loaded after availability.js, which defines window.AVAILABILITY.
 // Two parts below:
-//   1. Slot picker  — turns AVAILABILITY into the list of clickable
-//                      time slots under "When are you available?"
+//   1. Date picker  — sets the range of the "Request a date" calendar.
 //   2. Booking form — validates the form, applies simple spam
 //                      guards, and posts the enquiry to Web3Forms.
 // ============================================================
@@ -16,9 +14,18 @@
 const WEB3FORMS_ACCESS_KEY = "763ce697-e4e4-4fe2-865c-2cba71d5956d";
 const SITE_NAME = "Physics & Maths Tutoring";
 
-const DAY_KEYS = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+// ---- 1. Request-date calendar ------------------------------------------
 
-// ---- 1. Slot picker ----------------------------------------------------
+// Formats a "YYYY-MM-DD" string as e.g. "Tuesday 24 November 2026".
+function prettyDate(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString("en-GB", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
 
 function isoDate(d) {
   return (
@@ -30,98 +37,14 @@ function isoDate(d) {
   );
 }
 
-function prettyDate(d) {
-  return d.toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long" });
-}
-
-function slotStart(date, range) {
-  const [h, m] = range.split("-")[0].split(":").map(Number);
-  const d = new Date(date);
-  d.setHours(h, m, 0, 0);
-  return d;
-}
-
-function prettyTime(range) {
-  const [from, to] = range.split("-");
-  const fmt = (t) => {
-    let [h, m] = t.split(":").map(Number);
-    const ampm = h >= 12 ? "pm" : "am";
-    h = h % 12 || 12;
-    return m ? `${h}.${String(m).padStart(2, "0")}${ampm}` : `${h}${ampm}`;
-  };
-  return `${fmt(from)}–${fmt(to)}`;
-}
-
-function buildSlots() {
-  const cfg = window.AVAILABILITY;
-  if (!cfg) return [];
-
-  const now = new Date();
-  const cutoff = new Date(now.getTime() + (cfg.minNoticeHours || 0) * 3600 * 1000);
-  const days = (cfg.weeksAhead || 3) * 7;
-  const out = [];
-
-  for (let i = 0; i <= days; i++) {
-    const date = new Date(now);
-    date.setDate(now.getDate() + i);
-    date.setHours(0, 0, 0, 0);
-
-    const iso = isoDate(date);
-    if ((cfg.unavailableDates || []).includes(iso)) continue;
-
-    const weekly = (cfg.slots && cfg.slots[DAY_KEYS[date.getDay()]]) || [];
-    const extra = (cfg.extraSlots && cfg.extraSlots[iso]) || [];
-    const times = [...new Set([...weekly, ...extra])].sort();
-
-    const usable = times.filter((t) => slotStart(date, t) > cutoff);
-    if (usable.length) out.push({ iso, date, times: usable });
-  }
-  return out;
-}
-
-function renderSlots() {
-  const host = document.getElementById("slot-picker");
-  const days = buildSlots();
-  host.innerHTML = "";
-
-  if (!days.length) {
-    host.innerHTML = '<p class="hint">I need to update my availability!</p>';
-  }
-
-  days.forEach((day) => {
-    const wrap = document.createElement("div");
-    wrap.className = "slot-day";
-
-    const h = document.createElement("h4");
-    h.textContent = prettyDate(day.date);
-    wrap.appendChild(h);
-
-    const list = document.createElement("div");
-    list.className = "slot-list";
-
-    day.times.forEach((range) => {
-      const id = `slot-${day.iso}-${range.replace(/[:\-]/g, "")}`;
-      const label = document.createElement("label");
-      label.className = "slot";
-      label.innerHTML =
-        `<input type="checkbox" id="${id}" data-slot value="${prettyDate(day.date)}, ${prettyTime(range)}">` +
-        `<span>${prettyTime(range)}</span>`;
-      list.appendChild(label);
-    });
-
-    wrap.appendChild(list);
-    host.appendChild(wrap);
-  });
-
-  const cfg = window.AVAILABILITY || {};
-  const note = document.getElementById("tz-note");
-  const bits = [];
-  if (cfg.timezoneLabel) bits.push(`All times shown in ${cfg.timezoneLabel}.`);
-  if (cfg.note) bits.push(cfg.note);
-  note.textContent = bits.join(" ");
-}
-
-renderSlots();
+// The calendar only offers dates from tomorrow up to 3 months ahead.
+const dateInput = document.getElementById("request-date");
+const MIN_DATE = new Date();
+MIN_DATE.setDate(MIN_DATE.getDate() + 1);
+const MAX_DATE = new Date();
+MAX_DATE.setMonth(MAX_DATE.getMonth() + 3);
+dateInput.min = isoDate(MIN_DATE);
+dateInput.max = isoDate(MAX_DATE);
 
 // ---- 2. Booking form -----------------------------------------------------
 
@@ -207,7 +130,10 @@ form.addEventListener("submit", async (e) => {
     );
   }
 
-  const times = [...document.querySelectorAll("[data-slot]:checked")].map((i) => i.value);
+  const requestedDate = (fd.get("request_date") || "").toString();
+  if (requestedDate && (requestedDate < dateInput.min || requestedDate > dateInput.max)) {
+    return show("err", "Please pick a date between tomorrow and three months from now.");
+  }
 
   if (!keyIsSet) {
     return show(
@@ -224,7 +150,7 @@ form.addEventListener("submit", async (e) => {
     Phone: phone,
     "Subject area": area,
     Level: level,
-    "Preferred times": times.length ? times.join("  •  ") : "Not specified",
+    "Requested date": requestedDate ? prettyDate(requestedDate) : "Not specified",
     Message: message,
     "Sent at": new Date().toLocaleString("en-GB"),
     botcheck: fd.get("botcheck") || "",
@@ -248,11 +174,9 @@ form.addEventListener("submit", async (e) => {
       show(
         "ok",
         `Thanks ${esc(name.split(" ")[0])} — that's with me. ` +
-          `I'll text ${esc(phone)} to confirm, usually within a day. ` +
-          `Remember your first session is free.`,
+          `I'll text ${esc(phone)} to confirm, usually within a day.`,
       );
       form.reset();
-      document.querySelectorAll("[data-slot]:checked").forEach((i) => (i.checked = false));
     } else {
       throw new Error(data.message || "Unknown error");
     }
