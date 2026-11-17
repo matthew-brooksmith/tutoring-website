@@ -607,8 +607,7 @@ fieldset:last-of-type {
   margin-bottom: 20px;
 }
 
-legend,
-.field-label {
+legend {
   font-family: "Anton", Impact, sans-serif;
   text-transform: uppercase;
   font-size: 1.05rem;
@@ -616,6 +615,18 @@ legend,
   color: var(--blue-deep);
   padding: 0;
   margin-bottom: 4px;
+  display: block;
+}
+
+/* Sub-labels inside a section (e.g. "Your name" under "How do I reach
+   you?"): smaller, sentence case and in the body font, so they read as
+   part of the section rather than as headings of their own. */
+.field-label {
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin-bottom: 6px;
   display: block;
 }
 .date-field {
