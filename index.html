@@ -254,7 +254,7 @@
       <div class="wrap">
         <h2 class="section-head">Book a session</h2>
         <p class="section-sub">
-          Pick a time that you are available and please tell me what you are working on. I'll text
+          Pick a date that suits you and please tell me what you are working on. I'll text
           you back to confirm the session. Your first session and any associated enquiries are free.
         </p>
 
@@ -310,11 +310,18 @@
             </fieldset>
 
             <fieldset>
-              <legend>When are you available?</legend>
-              <div id="slot-picker" aria-live="polite">
-                <p class="hint">Loading available times…</p>
+              <legend id="request-date-label">
+                Request a date <span class="field-optional">(optional)</span>
+              </legend>
+              <p class="hint">Pick the day you'd like your session. I'll text you to agree a time.</p>
+              <div class="date-field">
+                <input
+                  type="date"
+                  id="request-date"
+                  name="request_date"
+                  aria-labelledby="request-date-label"
+                />
               </div>
-              <p class="tz-note" id="tz-note"></p>
             </fieldset>
 
             <fieldset>
@@ -390,7 +397,6 @@
       </small>
     </footer>
 
-    <script src="availability.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
